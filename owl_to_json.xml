@@ -1,0 +1,27 @@
+<tool id="spif_to_svif" name="SPIF to SVIF" version="1.0.1">
+  <description>converts SPIF data to SVIF data</description>
+  <requirements>
+    <requirement type="package" version="3.10">python</requirement>
+  </requirements>
+  <command>python3 '${__tool_directory__}/main.py' '$input' '$output'</command> 
+  <inputs>
+    <param name="input" type="data" format="spif" label="SPIF file" />
+  </inputs>
+  <outputs>
+    <data name="output" format="svif" />
+  </outputs>
+  <help>
+**What it does**
+
+This tool takes a SPIF file and then converts it to a SVIF file.
+
+-----
+
+**Example**
+
+Converting a SPIF file provides:
+
+- Galaxyx-[SPIF_to_SVIF_on_data_x].svif
+
+  </help>
+</tool>

@@ -1,0 +1,7 @@
+/venvs/*
+__pycache__/
+.vscode
+Sample.cpp
+test.owl
+output.json
+testcpp.owl

@@ -1,0 +1,1278 @@
+{
+    "elements": {
+        "nodes": [
+            {
+                "data": {
+                    "id": "4A594698_EF97_41B6_BD81_9B14DA153029",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "boolean",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "54181547_54D7_44A3_9EBC_BF252C4D5129",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "unsigned",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "921BCD60_09FA_4FBD_9D3C_E30B858CDE01",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "long",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "EB31150A_C3D7_4259_9382_D5E2B351ADDB",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "int",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "int",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "331259F3_5F10_4D82_B22F_0331AA2067D2",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "char16",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "238BE4A7_A19C_43E8_B555_DFB5B57D7F8E",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "long",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "D986DB92_0734_463E_AFD6_A8AE04AC89CE",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "long",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "0634F080_0944_4B9D_B4D4_AE0C85A3AF1F",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "void",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "1FCF014E_08DA_432E_BA50_2A8FEBC888E4",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "wchar",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "9C85ED8D_896A_40BF_88F5_07ED41C7D0E1",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "double",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "1AFBD434_C64A_47F7_A418_D4E3E3CA701F",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "float",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "541FAE47_7DD0_4B33_BF2D_191EEF6181B2",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "unsigned",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "39F038CF_503F_4AE8_A962_4F4BFBF7B771",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "unsigned",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "692D7C1B_8CD7_4082_86AF_EE3200F7B9AC",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "long",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "FE90211A_4BD3_45D8_A773_46DBF4E22D3D",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "float",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "F6F9CE43_2BFF_4D41_86BB_ECD3D8CA999D",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "short",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "BE5FFF7E_3DED_4481_A3F6_32BC87AAC25F",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "char",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "FA636092_02A5_4BE1_B0B6_D61FB577F945",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "bool",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "7A81C3F3_5566_4ADF_A95F_44CB705BD38E",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "short",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "EFC9AEAE_FF1D_45B9_9228_1EA4D4A4D15B",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "char32",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "95B539D4_1BEE_4789_A3EF_A8D359A29A67",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "double",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "E669EF7F_5991_4836_917A_A644449A0FB9",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "char",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "22E2A252_789A_4264_9550_083AB9CA1DD7",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "unsigned",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "D439B14D_C6E7_4A16_8AD6_BFB928963979",
+                    "labels": [
+                        "Primitive"
+                    ],
+                    "properties": {
+                        "simpleName": "byte",
+                        "metaSrc": "source code"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "2_0_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "labels": [
+                        "Container"
+                    ],
+                    "properties": {
+                        "simpleName": "testpackage",
+                        "metaSrc": "source code",
+                        "kind": "package"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "2_0_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "labels": [
+                        "Container"
+                    ],
+                    "properties": {
+                        "simpleName": "testpackage.car",
+                        "metaSrc": "source code",
+                        "kind": "package"
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "72_10_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Inner",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "84_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "ObjectCounter",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Main",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "MathOperations",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "10_3_67822159774148216693443128630523364146280145357871568908417474416219835366023",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "IOException",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "33_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Shape",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": true,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Rectangle",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "36_3_78962009522547404962428982344621845363568326580098142722277352503563527082247",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "ArrayList<>",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Test",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "NestedClass",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": true
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Circle",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": "[]",
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "103_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Constructor",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "69_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Outer",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Vehicle",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "8_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Car",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": true,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "StringLengthComparator",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": "[]",
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "4_13_59513248308129200844494718994690123708118620362669932934091241700095655802945",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Exception",
+                        "metaSrc": "source code",
+                        "kind": "class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "73_15_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "AbstractClass",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": null,
+                        "isClass": true,
+                        "isInterface": false,
+                        "isAbstract": true,
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "124_9_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Day",
+                        "metaSrc": "source code",
+                        "kind": "enum",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isEnum": true,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "8_11_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Fruit",
+                        "metaSrc": "source code",
+                        "kind": "enum",
+                        "isPublic": true,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isEnum": true
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "12_17_51022165235845847327612416438250767364710534527698986261074961167846590407072",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Comparator<String>",
+                        "metaSrc": "source code",
+                        "kind": "interface",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": true,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "60_10_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Shape",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": true,
+                        "isAbstract": "[]",
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "4_17_76008577239591160335942386845068357518435471267746145800027147888063394431762",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "Cloneable",
+                        "metaSrc": "source code",
+                        "kind": "interface",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": true,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "String",
+                        "metaSrc": "source code",
+                        "kind": "imported",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "6_17_96243101977704191167087964875408956077486679338537081677828836898058281076189",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "List<String>",
+                        "metaSrc": "source code",
+                        "kind": "imported",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "6_17_96243101977704191167087964875408956077486679338537081677828836898058281076189",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "List<Integer>",
+                        "metaSrc": "source code",
+                        "kind": "imported",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "4_13_67822159774148216693443128630523364146280145357871568908417474416219835366023",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "IOException",
+                        "metaSrc": "source code",
+                        "kind": "exception",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isEnum": false
+                    }
+                }
+            },
+            {
+                "data": {
+                    "id": "9_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "labels": [
+                        "Structure"
+                    ],
+                    "properties": {
+                        "simpleName": "CustomException",
+                        "metaSrc": "source code",
+                        "kind": "abstract class",
+                        "isPublic": null,
+                        "isClass": false,
+                        "isInterface": false,
+                        "isAbstract": "[]",
+                        "isEnum": false,
+                        "isStatic": false
+                    }
+                }
+            }
+        ],
+        "edges": [
+            {
+                "data": {
+                    "id": "2_0_79172081851553355288295596375460223421075799440627657615203299781126254616016-contains-2_0_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "source": "2_0_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "label": "contains",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "2_0_34083927285473295706624098219623591006442775957558420822958356197242916605621"
+                }
+            },
+            {
+                "data": {
+                    "id": "2_0_79172081851553355288295596375460223421075799440627657615203299781126254616016-contains-5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "source": "2_0_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "label": "contains",
+                    "properties": {
+                        "weight": 1,
+                        "containmentType": "package"
+                    },
+                    "target": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-contains-124_9_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "contains",
+                    "properties": {
+                        "weight": 1,
+                        "containmentType": "nested class"
+                    },
+                    "target": "124_9_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-contains-134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "contains",
+                    "properties": {
+                        "weight": 1,
+                        "containmentType": "nested class"
+                    },
+                    "target": "134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "69_6_7369412547006914277577921264035919370618363903026817757352188121963325577595-contains-72_10_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "source": "69_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "label": "contains",
+                    "properties": {
+                        "weight": 1,
+                        "containmentType": "nested class"
+                    },
+                    "target": "72_10_7369412547006914277577921264035919370618363903026817757352188121963325577595"
+                }
+            },
+            {
+                "data": {
+                    "id": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595-specializes-33_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "source": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "label": "specializes",
+                    "properties": {
+                        "weight": 1,
+                        "specializationType": "extends"
+                    },
+                    "target": "33_6_7369412547006914277577921264035919370618363903026817757352188121963325577595"
+                }
+            },
+            {
+                "data": {
+                    "id": "8_13_34083927285473295706624098219623591006442775957558420822958356197242916605621-specializes-4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "source": "8_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "label": "specializes",
+                    "properties": {
+                        "weight": 1,
+                        "specializationType": "extends"
+                    },
+                    "target": "4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621"
+                }
+            },
+            {
+                "data": {
+                    "id": "60_10_75256506093048495533171443210287212606443336598199685019880837275799160799543-specializes-4_17_76008577239591160335942386845068357518435471267746145800027147888063394431762",
+                    "source": "60_10_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "specializes",
+                    "properties": {
+                        "weight": 1,
+                        "specializationType": "extends"
+                    },
+                    "target": "4_17_76008577239591160335942386845068357518435471267746145800027147888063394431762"
+                }
+            },
+            {
+                "data": {
+                    "id": "65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-specializes-60_10_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "specializes",
+                    "properties": {
+                        "weight": 1,
+                        "specializationType": "implements"
+                    },
+                    "target": "60_10_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-specializes-12_17_51022165235845847327612416438250767364710534527698986261074961167846590407072",
+                    "source": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "specializes",
+                    "properties": {
+                        "weight": 1,
+                        "specializationType": "implements"
+                    },
+                    "target": "12_17_51022165235845847327612416438250767364710534527698986261074961167846590407072"
+                }
+            },
+            {
+                "data": {
+                    "id": "8_13_34083927285473295706624098219623591006442775957558420822958356197242916605621-accesses-4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "source": "8_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "label": "accesses",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-calls-134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "calls",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-calls-51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "calls",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-calls-65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "calls",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-calls-5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "calls",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-calls-5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "calls",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "134_17_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "65_6_75256506093048495533171443210287212606443336598199685019880837275799160799543"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-36_3_78962009522547404962428982344621845363568326580098142722277352503563527082247",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "36_3_78962009522547404962428982344621845363568326580098142722277352503563527082247"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-constructs-10_3_67822159774148216693443128630523364146280145357871568908417474416219835366023",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "10_3_67822159774148216693443128630523364146280145357871568908417474416219835366023"
+                }
+            },
+            {
+                "data": {
+                    "id": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595-constructs-5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016",
+                    "source": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "label": "constructs",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "5_13_79172081851553355288295596375460223421075799440627657615203299781126254616016"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-holds-47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "holds",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-holds-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "holds",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "73_15_75256506093048495533171443210287212606443336598199685019880837275799160799543-holds-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "73_15_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "holds",
+                    "properties": {
+                        "weight": 2
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621-holds-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "4_13_34083927285473295706624098219623591006442775957558420822958356197242916605621",
+                    "label": "holds",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-accepts-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "accepts",
+                    "properties": {
+                        "weight": 8
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-accepts-6_17_96243101977704191167087964875408956077486679338537081677828836898058281076189",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "accepts",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "6_17_96243101977704191167087964875408956077486679338537081677828836898058281076189"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-accepts-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "accepts",
+                    "properties": {
+                        "weight": 2
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-accepts-47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "accepts",
+                    "properties": {
+                        "weight": 3
+                    },
+                    "target": "47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066"
+                }
+            },
+            {
+                "data": {
+                    "id": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-accepts-47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066",
+                    "source": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "accepts",
+                    "properties": {
+                        "weight": 2
+                    },
+                    "target": "47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066"
+                }
+            },
+            {
+                "data": {
+                    "id": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-returns-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "51_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-returns-95B539D4_1BEE_4789_A3EF_A8D359A29A67",
+                    "source": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "95B539D4_1BEE_4789_A3EF_A8D359A29A67"
+                }
+            },
+            {
+                "data": {
+                    "id": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543-returns-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "29_6_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 3
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595-returns-9C85ED8D_896A_40BF_88F5_07ED41C7D0E1",
+                    "source": "41_6_7369412547006914277577921264035919370618363903026817757352188121963325577595",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 2
+                    },
+                    "target": "9C85ED8D_896A_40BF_88F5_07ED41C7D0E1"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-returns-B4074745_3F53_4483_81A8_7CC032FCED2B",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "B4074745_3F53_4483_81A8_7CC032FCED2B"
+                }
+            },
+            {
+                "data": {
+                    "id": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543-returns-47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066",
+                    "source": "95_13_75256506093048495533171443210287212606443336598199685019880837275799160799543",
+                    "label": "returns",
+                    "properties": {
+                        "weight": 1
+                    },
+                    "target": "47_19_9547014781282255098475443303543643561754473281808646487758370679850828918066"
+                }
+            }
+        ]
+    }
+}
