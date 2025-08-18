@@ -1,11 +1,18 @@
 <tool id="spif_to_svif" name="SPIF to SVIF" version="1.0.1">
   <description>converts SPIF data to SVIF data</description>
   <requirements>
+    <requirement type="package">rdflib</requirement>
     <requirement type="package" version="3.10">python</requirement>
   </requirements>
-  <command>python3 '${__tool_directory__}/main.py' '$input' '$output'</command> 
+  <command><![CDATA[
+python3 '${__tool_directory__}/main.py' '$input' '$output'
+#if $extra_zip
+    --extra '$extra_zip'
+#end if
+]]></command>
   <inputs>
     <param name="input" type="data" format="spif" label="SPIF file" />
+    <param name="extra_zip" type="data" format="zip" optional="true" label="Optional ZIP file" />
   </inputs>
   <outputs>
     <data name="output" format="svif" />
