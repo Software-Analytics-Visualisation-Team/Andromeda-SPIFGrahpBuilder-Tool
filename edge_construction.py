@@ -69,7 +69,7 @@ def create_container_contains_structure_edges(g: Graph):
         # )
         source = row["namespaceIdentifier"].toPython()
         target = row["hasIdentifier"].toPython()
-        # remap si id dupliqué
+        # remap if duplicate id
         source = ID_ALIAS.get(source, source)
         target = ID_ALIAS.get(target, target)
         edge = Edge(source, target, 1, "contains")

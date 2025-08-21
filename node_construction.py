@@ -43,19 +43,19 @@ def create_container_nodes(g: Graph):
         simple = namespace_to_name(row["hasCodeIdentifier"])
         raw_id = row["hasIdentifier"].toPython()
 
-        # Si déjà créé, on réutilise l'id canonique et on saute la création
+        # If it's already created, we reuse the canonical id and skip creation
         if simple in _container_cache:
             # _container_cache[raw_id] = _container_cache[simple]
             ID_ALIAS[raw_id] = _container_cache[simple]
             continue
 
-        # Premier passage : on crée le Container
+        # First pass: create the Container
         node = Node(raw_id, ["Container"], simple)
         kind = "package" if "JavaPackage" in row["type"] else "namespace"
         node.add_property("kind", kind)
         add_node(node)
 
-        # On mémorise l'id canonique pour ce simpleName
+        # Memorize the canonical id for this simpleName
         _container_cache[simple] = raw_id
         ID_ALIAS[raw_id] = raw_id          
 
