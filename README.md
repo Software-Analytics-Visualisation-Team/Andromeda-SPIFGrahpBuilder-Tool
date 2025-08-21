@@ -113,3 +113,8 @@ The unimplemented ones left are not visualized using ClassViz.
 - [ ] maxLoopDepth
 
 
+## Reference
+
+For automated installation of Galaxy and the Moonshot tools (including SPIF-to-SVIF-Tool), see the Andromeda Ansible playbooks: [Software-Analytics-Visualisation-Team/andromeda-ansible](https://github.com/Software-Analytics-Visualisation-Team/andromeda-ansible.git).
+
+
