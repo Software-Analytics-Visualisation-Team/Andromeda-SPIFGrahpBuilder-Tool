@@ -1,7 +1,6 @@
 from rdflib import Graph
 from json_construction import Edge, add_edge
 from helpers import namespace_to_id
-from node_construction import ID_ALIAS
 
 
 def create_container_contains_container_edges(g: Graph):
@@ -9,7 +8,7 @@ def create_container_contains_container_edges(g: Graph):
 
     # Construct the query.
     create_container_contains_container_query = """
-        SELECT ?resource ?hasIdentifier ?hasNestedNamespaceMember ?nestedIdentifier
+        SELECT ?resource ?hasIdentifier ?hasNestedNamespaceMember
         WHERE {
             VALUES ?type {
                 <http://se-on.org/ontologies/system-specific/2012/02/java.owl#JavaPackage>
@@ -18,24 +17,17 @@ def create_container_contains_container_edges(g: Graph):
             ?resource rdf:type ?type . 
             ?resource SEON_code:hasIdentifier ?hasIdentifier .
             ?resource SEON_code:hasNestedNamespaceMember ?hasNestedNamespaceMember .
-            ?hasNestedNamespaceMember SEON_code:hasIdentifier ?nestedIdentifier .
         }
     """
     create_container_contains_container_query_result = g.query(create_container_contains_container_query)
     # Construct the edges.
     for row in create_container_contains_container_query_result:
-        # edge = Edge(
-        #     namespace_to_id(row["resource"]),
-        #     namespace_to_id(row["hasNestedNamespaceMember"]),
-        #     1,
-        #     "contains",
-        # )
-        source = ID_ALIAS.get(row["hasIdentifier"].toPython(),
-                            row["hasIdentifier"].toPython())
-        target = ID_ALIAS.get(row["nestedIdentifier"].toPython(),
-                            row["nestedIdentifier"].toPython())
-        edge = Edge(source, target, 1, "contains")
-
+        edge = Edge(
+            namespace_to_id(row["resource"]),
+            namespace_to_id(row["hasNestedNamespaceMember"]),
+            1,
+            "contains",
+        )
         add_edge(edge)
 
 
@@ -44,7 +36,7 @@ def create_container_contains_structure_edges(g: Graph):
 
     # Construct the query.
     create_container_contains_structure_query = """
-        SELECT ?resource ?hasIdentifier ?isNamespaceMemberOf ?namespaceIdentifier
+        SELECT ?resource ?hasIdentifier ?isNamespaceMemberOf
         WHERE {
             VALUES ?type {
                 <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType>
@@ -55,24 +47,17 @@ def create_container_contains_structure_edges(g: Graph):
             } 
             ?resource rdf:type ?type . ?resource SEON_code:hasIdentifier ?hasIdentifier .
             ?resource SEON_code:isNamespaceMemberOf ?isNamespaceMemberOf .
-            ?isNamespaceMemberOf SEON_code:hasIdentifier ?namespaceIdentifier .
         }
     """
     create_container_contains_structure_query_result = g.query(create_container_contains_structure_query)
     # Construct the edges.
     for row in create_container_contains_structure_query_result:
-        # edge = Edge(
-        #     namespace_to_id(row["isNamespaceMemberOf"]),
-        #     namespace_to_id(row["resource"]),
-        #     1,
-        #     "contains",
-        # )
-        source = row["namespaceIdentifier"].toPython()
-        target = row["hasIdentifier"].toPython()
-        # remap if duplicate id
-        source = ID_ALIAS.get(source, source)
-        target = ID_ALIAS.get(target, target)
-        edge = Edge(source, target, 1, "contains")
+        edge = Edge(
+            namespace_to_id(row["isNamespaceMemberOf"]),
+            namespace_to_id(row["resource"]),
+            1,
+            "contains",
+        )
         edge.add_property("containmentType", "package")
         add_edge(edge)
 
@@ -82,7 +67,7 @@ def create_structure_contains_structure_edges(g: Graph):
 
     # Construct the query.
     create_structure_contains_structure_query = """
-        SELECT ?resource ?hasIdentifier ?hasNestedComplexTypeMember ?nestedIdentifier
+        SELECT ?resource ?hasIdentifier ?hasNestedComplexTypeMember
         WHERE { VALUES ?type { <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType>
                 <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType>
                 <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#EnumerationType>
@@ -91,22 +76,17 @@ def create_structure_contains_structure_edges(g: Graph):
             ?resource rdf:type ?type . 
             ?resource SEON_code:hasIdentifier ?hasIdentifier .
             ?resource SEON_code:hasNestedComplexTypeMember ?hasNestedComplexTypeMember .
-            ?hasNestedComplexTypeMember SEON_code:hasIdentifier ?nestedIdentifier .
         }
     """
     create_structure_contains_structure_query_result = g.query(create_structure_contains_structure_query)
     # Construct the edges.
     for row in create_structure_contains_structure_query_result:
-        # edge = Edge(
-        #     namespace_to_id(row["resource"]),
-        #     namespace_to_id(row["hasNestedComplexTypeMember"]),
-        #     1,
-        #     "contains",
-        # )
-        source = ID_ALIAS.get(row["hasIdentifier"].toPython(), row["hasIdentifier"].toPython())
-        target = ID_ALIAS.get(row["nestedIdentifier"].toPython(), row["nestedIdentifier"].toPython())
-        edge = Edge(source, target, 1, "contains")
-
+        edge = Edge(
+            namespace_to_id(row["resource"]),
+            namespace_to_id(row["hasNestedComplexTypeMember"]),
+            1,
+            "contains",
+        )
         edge.add_property("containmentType", "nested class")
         add_edge(edge)
 
