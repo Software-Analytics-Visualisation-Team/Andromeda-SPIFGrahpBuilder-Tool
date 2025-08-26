@@ -30,12 +30,9 @@ def create_container_contains_container_edges(g: Graph):
         #     1,
         #     "contains",
         # )
-        source = ID_ALIAS.get(row["hasIdentifier"].toPython(),
-                            row["hasIdentifier"].toPython())
-        target = ID_ALIAS.get(row["nestedIdentifier"].toPython(),
-                            row["nestedIdentifier"].toPython())
+        source = ID_ALIAS.get(row["hasIdentifier"].toPython(), row["hasIdentifier"].toPython())
+        target = ID_ALIAS.get(row["nestedIdentifier"].toPython(), row["nestedIdentifier"].toPython())
         edge = Edge(source, target, 1, "contains")
-
         add_edge(edge)
 
 
@@ -106,7 +103,6 @@ def create_structure_contains_structure_edges(g: Graph):
         source = ID_ALIAS.get(row["hasIdentifier"].toPython(), row["hasIdentifier"].toPython())
         target = ID_ALIAS.get(row["nestedIdentifier"].toPython(), row["nestedIdentifier"].toPython())
         edge = Edge(source, target, 1, "contains")
-
         edge.add_property("containmentType", "nested class")
         add_edge(edge)
 
@@ -117,49 +113,42 @@ def create_extends_edges(g: Graph):
     # Construct the query.
     # For classes extending classes.
     create_extends_query = """
-        SELECT ?resource ?hasIdentifier ?hasSuperClass
+        SELECT ?sub_id ?sup_id
         WHERE {
-            VALUES ?type {
-                <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType>
-            }
-            ?resource rdf:type ?type . 
-            ?resource SEON_code:hasIdentifier ?hasIdentifier .
-            ?resource SEON_code:hasSuperClass ?hasSuperClass .
+            ?sub rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType> .
+            ?sub SEON_code:hasSuperClass ?sup .
+            ?sub SEON_code:hasIdentifier ?sub_id .
+            ?sup SEON_code:hasIdentifier ?sup_id .
         }
     """
     create_extends_query_result = g.query(create_extends_query)
     # Construct the edges.
     for row in create_extends_query_result:
-        edge = Edge(
-            namespace_to_id(row["resource"]),
-            namespace_to_id(row["hasSuperClass"]),
-            1,
-            "specializes",
-        )
+        source = ID_ALIAS.get(row["sub_id"].toPython(), row["sub_id"].toPython())
+        target = ID_ALIAS.get(row["sup_id"].toPython(), row["sup_id"].toPython())
+        edge = Edge(source, target, 1, "specializes")
         edge.add_property("specializationType", "extends")
         add_edge(edge)
 
     # Construct the query.
     # For interfaces extending interfaces.
     create_extends_query = """
-        SELECT ?resource ?hasIdentifier ?hasSuperInterface
+        SELECT ?sub_id ?sup_id
         WHERE { VALUES ?type {
                 <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#InterfaceType>
             }
-            ?resource rdf:type ?type .
-            ?resource SEON_code:hasIdentifier ?hasIdentifier .
-            ?resource SEON_code:hasSuperInterface ?hasSuperInterface .
+            ?sub rdf:type ?type .
+            ?sub SEON_code:hasSuperInterface ?sup .
+            ?sub SEON_code:hasIdentifier ?sub_id .
+            ?sup SEON_code:hasIdentifier ?sup_id .
         }
     """
     create_extends_query_result = g.query(create_extends_query)
     # Construct the edges.
     for row in create_extends_query_result:
-        edge = Edge(
-            namespace_to_id(row["resource"]),
-            namespace_to_id(row["hasSuperInterface"]),
-            1,
-            "specializes",
-        )
+        source = ID_ALIAS.get(row["sub_id"].toPython(), row["sub_id"].toPython())
+        target = ID_ALIAS.get(row["sup_id"].toPython(), row["sup_id"].toPython())
+        edge = Edge(source, target, 1, "specializes")
         edge.add_property("specializationType", "extends")
         add_edge(edge)
         
@@ -169,24 +158,20 @@ def create_implements_edges(g: Graph):
 
     # Construct the query.
     create_implements_query = """
-        SELECT ?resource ?hasIdentifier ?implementsInterface
-        WHERE { VALUES ?type {
-                <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType>
-            }
-            ?resource rdf:type ?type . 
-            ?resource SEON_code:hasIdentifier ?hasIdentifier .
-            ?resource SEON_code:implementsInterface ?implementsInterface .
+        SELECT ?cls_id ?itf_id
+        WHERE {
+            ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#ClassType> .
+            ?resource SEON_code:implementsInterface ?itf .
+            ?resource SEON_code:hasIdentifier ?cls_id .
+            ?itf SEON_code:hasIdentifier ?itf_id .
         }
     """
     create_implements_query_result = g.query(create_implements_query)
     # Construct the edges.
     for row in create_implements_query_result:
-        edge = Edge(
-            namespace_to_id(row["resource"]),
-            namespace_to_id(row["implementsInterface"]),
-            1,
-            "specializes",
-        )
+        source = ID_ALIAS.get(row["cls_id"].toPython(), row["cls_id"].toPython())
+        target = ID_ALIAS.get(row["itf_id"].toPython(), row["itf_id"].toPython())
+        edge = Edge(source, target, 1, "specializes")
         edge.add_property("specializationType", "implements")
         add_edge(edge)
 
@@ -198,70 +183,45 @@ def _create_edges_from_method_or_constructor_interactions(
     interacted_thing_rdf_predicate: str,
 ):
     """
-    Create edges from method or constructor interactions.
-
-    Methods and Constructors interact with other methods, constructors, and fields. This function creates edges
-    from these interactions. The created edges go from the class in which the method or constructor is defined to the
-    class in which the thing interacted with is defined. The edge is labeled with the number of times the interaction
-    occurs.
-
+    Create edges from methods/constructors (declaring class) to the class that declares the interacted thing.
     """
-
-    # Construct the query.
     query = f"""
-        SELECT ?resource ?{method_or_constructor_interaction_rdf_predicate} ?isDeclaredMethodOf ?isDeclaredConstructorOf
+        SELECT ?declClass_id ?thing
         WHERE {{
             {{
-                ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method> .
-                ?resource SEON_code:isDeclaredMethodOf ?isDeclaredMethodOf .
-                ?resource SEON_code:{method_or_constructor_interaction_rdf_predicate} ?{method_or_constructor_interaction_rdf_predicate} . 
+                ?m rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method> .
+                ?m SEON_code:isDeclaredMethodOf ?cls .
+                ?m SEON_code:{method_or_constructor_interaction_rdf_predicate} ?thing .
             }}
             UNION
             {{
-                ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor> .
-                ?resource SEON_code:isDeclaredConstructorOf ?isDeclaredMethodOf .
-                ?resource SEON_code:{method_or_constructor_interaction_rdf_predicate} ?{method_or_constructor_interaction_rdf_predicate} .
+                ?c rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor> .
+                ?c SEON_code:isDeclaredConstructorOf ?cls .
+                ?c SEON_code:{method_or_constructor_interaction_rdf_predicate} ?thing .
             }}
+            ?cls SEON_code:hasIdentifier ?declClass_id .
         }}
     """
-    query_result = g.query(query)
-    interactions_per_class = {}
-    for row in query_result:
-        containing_class_id = namespace_to_id(
-            row["isDeclaredMethodOf"] or row["isDeclaredConstructorOf"]
-        )
-        interacted_thing = row[method_or_constructor_interaction_rdf_predicate]
-        if containing_class_id not in interactions_per_class:
-            interactions_per_class[containing_class_id] = {}
-        if interacted_thing not in interactions_per_class[containing_class_id]:
-            interactions_per_class[containing_class_id][interacted_thing] = 1
-        else:
-            interactions_per_class[containing_class_id][interacted_thing] += 1
+    by_class = {}
+    for row in g.query(query):
+        source = ID_ALIAS.get(row["declClass_id"].toPython(), row["declClass_id"].toPython())
+        thing = row["thing"]
+        by_class.setdefault(source, {}).setdefault(thing, 0)
+        by_class[source][thing] += 1
 
-    # For each interaction, query further information about the interacted thing and create an edge.
-    for (
-        containing_class_id,
-        interacted_things,
-    ) in interactions_per_class.items():
-        for interacted_thing, count in interacted_things.items():
-            interacted_thing_delcaration_query = f"""
-                SELECT ?{interacted_thing_rdf_predicate}
+    for source, things in by_class.items():
+        for thing, count in things.items():
+            q2 = f"""
+                SELECT ?decl_id
                 WHERE {{
-                    <{interacted_thing}> SEON_code:{interacted_thing_rdf_predicate} ?{interacted_thing_rdf_predicate} .
+                    <{thing}> SEON_code:{interacted_thing_rdf_predicate} ?decl .
+                    ?decl SEON_code:hasIdentifier ?decl_id .
                 }}
             """
-            interacted_thing_declaration_query_result = g.query(
-                interacted_thing_delcaration_query
-            )
-            # Create the edge.
-            for declaration_row in interacted_thing_declaration_query_result:
-                accessed_class_id = namespace_to_id(
-                    declaration_row[interacted_thing_rdf_predicate]
-                )
-                if accessed_class_id != containing_class_id:
-                    edge = Edge(
-                        containing_class_id, accessed_class_id, count, edge_name
-                    )
+            for r2 in g.query(q2):
+                target = ID_ALIAS.get(r2["decl_id"].toPython(), r2["decl_id"].toPython())
+                if target != source:
+                    edge = Edge(source, target, count, edge_name)
                     add_edge(edge)
 
 
@@ -275,163 +235,114 @@ def create_accesses_edges(g: Graph):
 
 def create_calls_edges(g: Graph):
     """ Create edges from a method or constructor to the methods it calls."""
-    
     _create_edges_from_method_or_constructor_interactions(
         g, "calls", "invokesMethod", "isDeclaredMethodOf"
     )
 
 
 def create_constructs_edges(g: Graph):
-    """ Create edges from a method or constructor to the classes it constructs."""
-
-    # Construct the edges from constructors to classes.
+    """Create edges from methods/constructors to classes they construct."""
     _create_edges_from_method_or_constructor_interactions(
         g, "constructs", "invokesConstructor", "isDeclaredConstructorOf"
     )
-
-    # Construct the query.
-    create_constructs_query = """
-        SELECT ?resource ?isDeclaredMethodOf ?isDeclaredConstructorOf ?instantiatesClass
-        WHERE { VALUES ?type {
-                <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method>
-                <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor>
+    q = """
+        SELECT ?declClass_id ?instCls_id
+        WHERE {
+            {
+                ?m rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method> .
+                ?m SEON_code:isDeclaredMethodOf ?cls .
+                ?m SEON_code:instantiatesClass ?instCls .
             }
-            ?resource rdf:type ?type . 
-            ?resource SEON_code:instantiatesClass ?instantiatesClass .
-            OPTIONAL {
-                ?resource SEON_code:isDeclaredMethodOf ?isDeclaredMethodOf .
-            }  
-            OPTIONAL {
-                ?resource SEON_code:isDeclaredConstructorOf ?isDeclaredConstructorOf .
-            } 
+            UNION
+            {
+                ?c rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Constructor> .
+                ?c SEON_code:isDeclaredConstructorOf ?cls .
+                ?c SEON_code:instantiatesClass ?instCls .
+            }
+            ?cls    SEON_code:hasIdentifier ?declClass_id .
+            ?instCls SEON_code:hasIdentifier ?instCls_id .
         }
     """
-    create_constructs_query_result = g.query(create_constructs_query)
-    # Construct the edges.
-    for row in create_constructs_query_result:
-        # If the resource is a method, create an edge from the method to the class it constructs.
-        if row["isDeclaredMethodOf"]:
-            edge = Edge(
-                namespace_to_id(row["isDeclaredMethodOf"]),
-                namespace_to_id(row["instantiatesClass"]),
-                1,
-                "constructs",
-            )
+    counts = {}
+    for row in g.query(q):
+        source = ID_ALIAS.get(row["declClass_id"].toPython(), row["declClass_id"].toPython())
+        target = ID_ALIAS.get(row["instCls_id"].toPython(), row["instCls_id"].toPython())
+        counts.setdefault(source, {}).setdefault(target, 0)
+        counts[source][target] += 1
+    for source, targets in counts.items():
+        for target, c in targets.items():
+            edge = Edge(source, target, c, "constructs")
             add_edge(edge)
-        # If the resource is a constructor, create an edge from the constructor to the class it constructs.
-        elif row["isDeclaredConstructorOf"]:
-            edge = Edge(
-                namespace_to_id(row["isDeclaredConstructorOf"]),
-                namespace_to_id(row["instantiatesClass"]),
-                1,
-                "constructs",
-            )
-            add_edge(edge)
-
 
 
 def create_holds_edges(g: Graph):
-    """ Create edges from a field to the datatypes it holds."""
-
-    # Construct the query.
-    create_holds_query = """
-        SELECT ?resource ?isDeclaredFieldOf ?hasDatatype
+    """Create edges from a field's declaring class to the datatype it holds."""
+    q = """
+        SELECT ?declClass_id ?dt_id
         WHERE {
-            ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field> .
-            ?resource SEON_code:isDeclaredFieldOf ?isDeclaredFieldOf .
-            ?resource SEON_code:hasDatatype ?hasDatatype .
+            ?f rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Field> .
+            ?f SEON_code:isDeclaredFieldOf ?cls .
+            ?f SEON_code:hasDatatype ?dt .
+            ?cls SEON_code:hasIdentifier ?declClass_id .
+            ?dt  SEON_code:hasIdentifier ?dt_id .
         }
     """
-    create_holds_query_result = g.query(create_holds_query)
-    holds_data = {}
-    for row in create_holds_query_result:
-        source = namespace_to_id(row["isDeclaredFieldOf"])
-        target = namespace_to_id(row["hasDatatype"])
-
-        if source not in holds_data:
-            holds_data[source] = {}
-        if target not in holds_data[source]:
-            holds_data[source][target] = 1
-        else:
-            holds_data[source][target] += 1
-
-    # Construct the edges.
-    for source, targets in holds_data.items():
-        for target, count in targets.items():
-            holds_edge = Edge(source, target, count, "holds")
-            add_edge(holds_edge)
+    counts = {}
+    for row in g.query(q):
+        source = ID_ALIAS.get(row["declClass_id"].toPython(), row["declClass_id"].toPython())
+        target = ID_ALIAS.get(row["dt_id"].toPython(), row["dt_id"].toPython())
+        counts.setdefault(source, {}).setdefault(target, 0)
+        counts[source][target] += 1
+    for source, targets in counts.items():
+        for target, c in targets.items():
+            edge = Edge(source, target, c, "holds")
+            add_edge(edge)
 
 
 def create_accepts_edges(g: Graph):
-    """ Create edges from a method or constructor to the datatypes it accepts as parameters."""
-
-    # Construct the query.
-    create_holds_query = """
-        SELECT ?resource ?isParameterOf ?hasDatatype
+    """Create edges from a method's declaring class to the parameter datatype it accepts."""
+    q = """
+        SELECT ?declClass_id ?dt_id
         WHERE {
-            ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter> .
-            ?resource SEON_code:isParameterOf ?isParameterOf .
-            ?resource SEON_code:hasDatatype ?hasDatatype .
+            ?p rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Parameter> .
+            ?p SEON_code:isParameterOf ?m .
+            ?p SEON_code:hasDatatype ?dt .
+            ?m SEON_code:isDeclaredMethodOf ?cls .
+            ?cls SEON_code:hasIdentifier ?declClass_id .
+            ?dt  SEON_code:hasIdentifier ?dt_id .
         }
     """
-    create_holds_query_result = g.query(create_holds_query)
-    accepts_data = {}
-
-    # For each parameter, query further information about the datatype.
-    for row in create_holds_query_result:
-        isDeclaredMethodOf_query = f"""
-            SELECT ?isDeclaredMethodOf
-            WHERE {{
-                <{row['isParameterOf']}> SEON_code:isDeclaredMethodOf ?isDeclaredMethodOf .
-            }}
-        """
-        isDeclaredMethodOf_query_result = g.query(isDeclaredMethodOf_query)
-        for isDeclaredMethodOf_row in isDeclaredMethodOf_query_result:
-            source = namespace_to_id(isDeclaredMethodOf_row["isDeclaredMethodOf"])
-
-        target = namespace_to_id(row["hasDatatype"])
-
-        if source not in accepts_data:
-            accepts_data[source] = {}
-        if target not in accepts_data[source]:
-            accepts_data[source][target] = 1
-        else:
-            accepts_data[source][target] += 1
-
-    # Construct the edges.
-    for source, targets in accepts_data.items():
-        for target, count in targets.items():
-            accepts_edge = Edge(source, target, count, "accepts")
-            add_edge(accepts_edge)
+    counts = {}
+    for row in g.query(q):
+        source = ID_ALIAS.get(row["declClass_id"].toPython(), row["declClass_id"].toPython())
+        target = ID_ALIAS.get(row["dt_id"].toPython(), row["dt_id"].toPython())
+        counts.setdefault(source, {}).setdefault(target, 0)
+        counts[source][target] += 1
+    for source, targets in counts.items():
+        for target, c in targets.items():
+            edge = Edge(source, target, c, "accepts")
+            add_edge(edge)
 
 
 def create_returns_edges(g: Graph):
-    """ Create edges from a method to the datatypes it returns."""
-
-    # Construct the query.
-    create_holds_query = """
-        SELECT ?resource ?isDeclaredMethodOf ?hasReturnType
+    """Create edges from a method's declaring class to the return datatype."""
+    q = """
+        SELECT ?declClass_id ?rt_id
         WHERE {
-            ?resource rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method> .
-            ?resource SEON_code:isDeclaredMethodOf ?isDeclaredMethodOf .
-            ?resource SEON_code:hasReturnType ?hasReturnType .
+            ?m rdf:type <http://se-on.org/ontologies/domain-specific/2012/02/code.owl#Method> .
+            ?m SEON_code:isDeclaredMethodOf ?cls .
+            ?m SEON_code:hasReturnType ?rt .
+            ?cls SEON_code:hasIdentifier ?declClass_id .
+            ?rt  SEON_code:hasIdentifier ?rt_id .
         }
     """
-    create_holds_query_result = g.query(create_holds_query)
-    returns_data = {}
-    for row in create_holds_query_result:
-        source = namespace_to_id(row["isDeclaredMethodOf"])
-        target = namespace_to_id(row["hasReturnType"])
-
-        if source not in returns_data:
-            returns_data[source] = {}
-        if target not in returns_data[source]:
-            returns_data[source][target] = 1
-        else:
-            returns_data[source][target] += 1
-
-    # Construct the edges.
-    for source, targets in returns_data.items():
-        for target, count in targets.items():
-            returns_edge = Edge(source, target, count, "returns")
-            add_edge(returns_edge)
+    counts = {}
+    for row in g.query(q):
+        source = ID_ALIAS.get(row["declClass_id"].toPython(), row["declClass_id"].toPython())
+        target = ID_ALIAS.get(row["rt_id"].toPython(), row["rt_id"].toPython())
+        counts.setdefault(source, {}).setdefault(target, 0)
+        counts[source][target] += 1
+    for source, targets in counts.items():
+        for target, c in targets.items():
+            edge = Edge(source, target, c, "returns")
+            add_edge(edge)
